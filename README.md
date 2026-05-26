@@ -1,19 +1,19 @@
-# Insulation Contractors — Fort Lauderdale & Miami
+# Insulation Contractors Near Me
 
-A conversion-focused landing site for an insulation contractor targeting **Fort Lauderdale, Miami, and all of South Florida**. Pure static HTML/CSS/JS — no build step.
+A conversion-focused landing site for a **nationwide insulation contractor network** — matches homeowners and businesses with vetted local pros in any US ZIP. Pure static HTML/CSS/JS — no build step.
 
 ## Conversion features built in
 - **Sticky top phone bar** + click-to-call (mobile sticky CTA at bottom too)
 - **Above-the-fold lead form** with phone auto-formatter & inline validation
-- **5-star social proof** + 487 review counter in hero
-- **Limited-time offer banner** ($299 off, auto-updating deadline date)
-- **Florida-specific pain points** — FPL bills, two-story heat, humidity, hurricane code
-- **Live savings calculator** — sliders for home size + current AC bill → monthly / annual / 10-yr savings + payback
-- **Live activity popups** — "Marcus from Fort Lauderdale just booked…" (social proof loop)
-- **Service area grid** — all Broward + Miami-Dade cities
-- **Real local reviews** with city names (Coral Springs, Doral, Miami Shores, Sunny Isles, Hollywood, Pembroke Pines)
-- **Florida-specific FAQ** — FPL/Duke rebates, spray foam in humidity, HOA/condo COIs
-- **`HVACBusiness` JSON-LD schema** with full NAP + areaServed list
+- **5-star social proof** + 4,820 review counter in hero
+- **Limited-time offer banner** ($299 off, auto-updating deadline)
+- **Pain points** — high bills, two-story heat, drafts, storm resilience
+- **Live savings calculator** — sliders for home size + current bill → monthly / annual / 10-yr savings + payback
+- **Live activity popups** — "Marcus from Austin, TX just booked…" (rotates through 10 metros)
+- **Nationwide coverage grid** — top US metros + regional coverage breakdown
+- **Real-style reviews** from cities across the country (Phoenix, Indianapolis, Asheville, Chicago, Denver, Portland)
+- **Honest FAQ** — pricing, rebates (25C), warranty, safety, condos/HOAs
+- **`Service` JSON-LD schema** with nationwide `areaServed`
 - **Phone-first design** — every section has a "Call Now" or "Get Quote" CTA
 
 ## Stack
@@ -23,7 +23,7 @@ A conversion-focused landing site for an insulation contractor targeting **Fort 
 
 ## Files
 - `index.html` — single-page site
-- `styles.css` — light, professional theme (navy + amber, FL-trustworthy palette)
+- `styles.css` — light, professional theme (navy + amber)
 - `main.js` — form handling, calculator, social-proof loop, scroll reveals
 
 ## Wire up the lead form
@@ -43,11 +43,10 @@ Recommended integrations:
 - [HubSpot Forms](https://hubspot.com) embed if you're running a CRM
 
 ## Customize for your business
-1. Replace `(954) 555-0199` everywhere with your real number (search-and-replace).
-2. Update license number (`CCC#1234567`) and address (`500 E Broward Blvd…`).
-3. Swap the offer text in `index.html` → `#offer` section.
-4. Drop real reviews + city names into the testimonials grid.
-5. Brand colors live as CSS variables at the top of `styles.css` (`--navy`, `--amber`, `--green`).
+1. Replace `1-800-555-0199` everywhere with your real number (search-and-replace).
+2. Update the offer text in `index.html` → `#offer` section.
+3. Drop real reviews + city names into the testimonials grid.
+4. Brand colors live as CSS variables at the top of `styles.css` (`--navy`, `--amber`, `--green`).
 
 ## Deploy
 Drop the folder on any static host — GitHub Pages, Netlify, Vercel, Cloudflare Pages.

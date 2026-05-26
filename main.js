@@ -1,4 +1,4 @@
-// === Insulation Contractors — Fort Lauderdale & Miami ===
+// === Insulation Contractors Near Me — Nationwide ===
 
 // Footer year
 document.getElementById('yr').textContent = new Date().getFullYear();
@@ -68,20 +68,22 @@ form?.addEventListener('submit', async (e) => {
 
   btn.disabled = false;
   btn.innerHTML = '<span>✓ Sent — we\'ll call you in 30 minutes →</span>';
-  toast(`Thanks ${data.fname}! A South Florida insulation pro will call you within 30 minutes.`, 5000);
+  toast(`Thanks ${data.fname}! A local insulation pro in ${data.zip} will call you within 30 minutes.`, 5000);
   setTimeout(() => { btn.innerHTML = original; form.reset(); }, 4500);
 });
 
 // === Live activity pop (social proof) ===
 const livePopups = [
-  { who: 'Marcus from Fort Lauderdale', what: 'just booked a spray foam install', mins: 3, init: 'M' },
-  { who: 'Sandra from Doral', what: 'requested an attic insulation quote', mins: 8, init: 'S' },
-  { who: 'Jose from Hollywood', what: 'scheduled a free thermal scan', mins: 14, init: 'J' },
-  { who: 'Patricia from Aventura', what: 'received a quote for soundproofing', mins: 21, init: 'P' },
-  { who: 'Diego from Pembroke Pines', what: 'just booked attic insulation', mins: 28, init: 'D' },
-  { who: 'Tatiana from Coral Gables', what: 'requested an in-home estimate', mins: 35, init: 'T' },
-  { who: 'Kevin from Pompano Beach', what: 'started a whole-home spray foam job', mins: 42, init: 'K' },
-  { who: 'Renee from Miami Beach', what: 'booked insulation removal + reinstall', mins: 49, init: 'R' },
+  { who: 'Marcus from Austin, TX', what: 'just booked a spray foam install', mins: 3, init: 'M' },
+  { who: 'Sandra from Denver, CO', what: 'requested an attic insulation quote', mins: 8, init: 'S' },
+  { who: 'Jose from Phoenix, AZ', what: 'scheduled a free thermal scan', mins: 14, init: 'J' },
+  { who: 'Patricia from Chicago, IL', what: 'received a quote for soundproofing', mins: 21, init: 'P' },
+  { who: 'Diego from Atlanta, GA', what: 'just booked attic insulation', mins: 28, init: 'D' },
+  { who: 'Tatiana from Seattle, WA', what: 'requested an in-home estimate', mins: 35, init: 'T' },
+  { who: 'Kevin from Boston, MA', what: 'started a whole-home spray foam job', mins: 42, init: 'K' },
+  { who: 'Renee from Nashville, TN', what: 'booked insulation removal + reinstall', mins: 49, init: 'R' },
+  { who: 'Aaron from Portland, OR', what: 'just booked a free assessment', mins: 56, init: 'A' },
+  { who: 'Linda from Minneapolis, MN', what: 'requested commercial insulation', mins: 63, init: 'L' },
 ];
 const popEl = document.getElementById('livePop');
 let popIdx = 0;
