@@ -17,6 +17,7 @@ document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
 // Toast helper
 const toast = (msg, ms = 4000) => {
   const t = document.getElementById('toast');
+  if (!t) return;
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(toast._t);
@@ -49,46 +50,17 @@ form?.addEventListener('submit', async (e) => {
   const btn = form.querySelector('button[type="submit"]');
   const original = btn.innerHTML;
   btn.disabled = true;
-  btn.innerHTML = 'Sending…';
+  btn.textContent = 'Sending…';
 
   // TODO: wire to your endpoint
   // await fetch('https://formspree.io/f/XXXX', { method:'POST', headers:{Accept:'application/json'}, body: new FormData(form) });
   await new Promise((r) => setTimeout(r, 1200));
 
   btn.disabled = false;
-  btn.innerHTML = '✓ Sent — we\'ll call you in 30 minutes';
+  btn.textContent = '✓ Sent — we\'ll call you in 30 minutes';
   toast(`Thanks ${data.fname}! A South Florida estimator will call you within 30 minutes.`, 5000);
   setTimeout(() => { btn.innerHTML = original; form.reset(); }, 4500);
 });
-
-// === Live activity pop (social proof) — Miami / Broward / Boca ===
-const livePopups = [
-  { who: 'Marcus from Coral Gables',     what: 'just booked a spray foam install', mins: 3,  init: 'M' },
-  { who: 'Sandra from Doral',            what: 'requested an attic insulation estimate', mins: 8,  init: 'S' },
-  { who: 'Jose from Hollywood',          what: 'scheduled a free thermal scan',    mins: 14, init: 'J' },
-  { who: 'Patricia from Aventura',       what: 'received a soundproofing quote',   mins: 21, init: 'P' },
-  { who: 'Diego from Pembroke Pines',    what: 'just booked attic insulation',     mins: 28, init: 'D' },
-  { who: 'Tatiana from Boca Raton',      what: 'requested an in-home estimate',    mins: 35, init: 'T' },
-  { who: 'Kevin from Pompano Beach',     what: 'started a whole-home spray foam',  mins: 42, init: 'K' },
-  { who: 'Renee from Sunny Isles',       what: 'booked insulation removal',        mins: 49, init: 'R' },
-  { who: 'Aaron from Weston',            what: 'just booked a free assessment',    mins: 56, init: 'A' },
-  { who: 'Linda from Pinecrest',         what: 'requested attic blown-in',         mins: 63, init: 'L' },
-];
-const popEl = document.getElementById('livePop');
-let popIdx = 0;
-const showLivePop = () => {
-  if (!popEl) return;
-  const p = livePopups[popIdx % livePopups.length];
-  popIdx++;
-  popEl.innerHTML = `
-    <span class="av">${p.init}</span>
-    <span><b>${p.who}</b> ${p.what}<small>${p.mins} minutes ago · Verified ✓</small></span>
-  `;
-  popEl.classList.add('show');
-  setTimeout(() => popEl.classList.remove('show'), 6000);
-};
-setTimeout(showLivePop, 7000);
-setInterval(showLivePop, 16000);
 
 // Smooth scroll & focus management
 document.querySelectorAll('a[href^="#"]').forEach((a) => {
